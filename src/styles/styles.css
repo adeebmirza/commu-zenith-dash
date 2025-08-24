@@ -80,6 +80,24 @@
 }
 
 @layer components {
+  /* Layout Components */
+  .dashboard-container {
+    @apply min-h-screen flex w-full bg-background;
+  }
+
+  .dashboard-main {
+    @apply flex-1;
+  }
+
+  .dashboard-header {
+    @apply h-16 flex items-center justify-between border-b border-border/50 px-6 bg-card/50 backdrop-blur-sm;
+  }
+
+  .dashboard-content {
+    @apply p-6;
+  }
+
+  /* Card Components */
   .dashboard-card {
     @apply bg-gradient-to-br from-card to-card/80 backdrop-blur-sm border border-border/50 rounded-xl shadow-[var(--shadow-elegant)] transition-[var(--transition-smooth)] hover:shadow-[var(--shadow-glow)];
   }
@@ -92,11 +110,227 @@
     @apply dashboard-card p-6;
   }
 
+  .stats-grid {
+    @apply grid gap-6 md:grid-cols-2 lg:grid-cols-4;
+  }
+
+  .analytics-grid {
+    @apply grid gap-6 lg:grid-cols-2;
+  }
+
+  /* Text Components */
   .gradient-text {
     @apply bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent;
   }
 
+  .page-title {
+    @apply text-3xl font-bold gradient-text mb-8;
+  }
+
+  .section-title {
+    @apply text-xl font-semibold text-foreground mb-4;
+  }
+
+  .metric-value {
+    @apply text-3xl font-bold text-foreground;
+  }
+
+  .metric-label {
+    @apply text-sm text-muted-foreground;
+  }
+
+  .metric-change {
+    @apply text-sm font-medium;
+  }
+
+  .positive-change {
+    @apply text-success;
+  }
+
+  .negative-change {
+    @apply text-destructive;
+  }
+
+  /* Button Components */
+  .time-selector {
+    @apply flex gap-2 mb-6;
+  }
+
+  .filter-buttons {
+    @apply flex flex-wrap gap-2 mb-4;
+  }
+
+  /* List Components */
+  .member-list {
+    @apply space-y-3;
+  }
+
+  .member-item {
+    @apply flex items-center gap-3 p-3 rounded-lg bg-muted/50 hover:bg-muted transition-colors;
+  }
+
+  .member-avatar {
+    @apply w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-semibold;
+  }
+
+  .member-info {
+    @apply flex-1;
+  }
+
+  .member-name {
+    @apply font-medium text-foreground;
+  }
+
+  .member-meta {
+    @apply text-sm text-muted-foreground;
+  }
+
+  .member-stats {
+    @apply text-right;
+  }
+
+  .member-count {
+    @apply font-semibold text-foreground;
+  }
+
+  /* Feedback Components */
+  .feedback-list {
+    @apply space-y-4;
+  }
+
+  .feedback-item {
+    @apply dashboard-card p-4;
+  }
+
+  .feedback-header {
+    @apply flex items-center justify-between mb-3;
+  }
+
+  .feedback-user {
+    @apply flex items-center gap-3;
+  }
+
+  .feedback-content {
+    @apply text-foreground leading-relaxed;
+  }
+
+  .feedback-rating {
+    @apply flex items-center gap-1;
+  }
+
+  /* Suggestion Components */
+  .suggestion-list {
+    @apply space-y-4;
+  }
+
+  .suggestion-item {
+    @apply dashboard-card p-4 border-l-4 border-l-primary;
+  }
+
+  .suggestion-title {
+    @apply font-semibold text-foreground mb-2;
+  }
+
+  .suggestion-description {
+    @apply text-muted-foreground;
+  }
+
+  /* Category Components */
+  .category-grid {
+    @apply grid gap-4 md:grid-cols-2 lg:grid-cols-4;
+  }
+
+  .category-item {
+    @apply metric-card text-center;
+  }
+
+  .category-icon {
+    @apply w-8 h-8 mx-auto mb-2 text-primary;
+  }
+
+  .category-name {
+    @apply font-medium text-foreground mb-1;
+  }
+
+  .category-count {
+    @apply text-2xl font-bold text-primary;
+  }
+
+  /* Company Components */
+  .company-stats {
+    @apply grid gap-6 md:grid-cols-2;
+  }
+
+  .company-list {
+    @apply space-y-3 max-h-96 overflow-y-auto;
+  }
+
+  .company-item {
+    @apply flex items-center justify-between p-3 rounded-lg bg-muted/50;
+  }
+
+  .company-name {
+    @apply font-medium text-foreground;
+  }
+
+  .company-count {
+    @apply font-semibold text-primary;
+  }
+
+  /* Utility Components */
   .gradient-border {
     @apply relative before:absolute before:inset-0 before:p-[1px] before:bg-gradient-to-r before:from-primary/30 before:to-primary-glow/30 before:rounded-xl before:-z-10;
+  }
+
+  .loading-state {
+    @apply animate-pulse bg-muted rounded;
+  }
+
+  .hover-lift {
+    @apply transition-transform duration-200 hover:-translate-y-1;
+  }
+
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  }
+
+  /* Responsive Utilities */
+  .mobile-hide {
+    @apply hidden md:block;
+  }
+
+  .mobile-show {
+    @apply block md:hidden;
+  }
+
+  /* Animation Classes */
+  .slide-in {
+    @apply animate-fade-in;
+  }
+
+  .scale-in {
+    @apply animate-scale-in;
+  }
+
+  /* Status Indicators */
+  .status-online {
+    @apply text-success;
+  }
+
+  .status-offline {
+    @apply text-muted-foreground;
+  }
+
+  .status-busy {
+    @apply text-warning;
+  }
+
+  /* Progress Indicators */
+  .progress-bar {
+    @apply w-full bg-muted rounded-full h-2;
+  }
+
+  .progress-fill {
+    @apply h-full bg-primary rounded-full transition-all duration-300;
   }
 }
